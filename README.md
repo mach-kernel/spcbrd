@@ -4,6 +4,8 @@ DOS 13h flappy bird style game, ✨ in space ✨, written entirely on a Toshiba 
 
 [Play (dosbox-em/wasm)](https://mach-kernel.github.io/spcbrd/)
 
+<img src="https://github.com/mach-kernel/spcbrd/assets/396039/c29e081b-a170-4c47-9478-45b91ed4093b" width="450">
+
 #### Getting Started
 
 - `make watcom` will download the latest OpenWatcom build. Follow the wizard and complete a full installation to `C:\WATCOM`.
