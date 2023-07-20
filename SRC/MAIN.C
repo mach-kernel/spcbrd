@@ -486,23 +486,23 @@ void handle_input() {
 	switch (k) {
 		// space
 		case 0x20:
-		if (STATE->mode != FLAP_GAME) return;
-		STATE->birdie[0] = min(STATE->birdie[0]+10, 200);
+			if (STATE->mode != FLAP_GAME) return;
+			STATE->birdie[0] = min(STATE->birdie[0]+10, 200);
 
-		if (!STATE->sfx_play_hnd[SFX_JUMP]) return;
-		MIDASstopModule(STATE->sfx_play_hnd[SFX_JUMP]);
-		STATE->sfx_play_hnd[SFX_JUMP] = MIDASplayModule(STATE->sfx_mod[SFX_JUMP], 0);
-		MIDASsetMusicVolume(STATE->sfx_play_hnd[SFX_JUMP], 32);
+			if (!STATE->sfx_play_hnd[SFX_JUMP]) return;
+			MIDASstopModule(STATE->sfx_play_hnd[SFX_JUMP]);
+			STATE->sfx_play_hnd[SFX_JUMP] = MIDASplayModule(STATE->sfx_mod[SFX_JUMP], 0);
+			MIDASsetMusicVolume(STATE->sfx_play_hnd[SFX_JUMP], 32);
 
 			break;
-	case 0x50:
-	case 0x70:
-		STATE->mode = STATE->mode == FLAP_GAME ? FLAP_PAUSE : FLAP_GAME;
-		draw_statusbar();
-		break;
-	case 0x71:
-		STATE->mode = FLAP_LOSE;
-		break;
+		case 0x50:
+		case 0x70:
+			STATE->mode = STATE->mode == FLAP_GAME ? FLAP_PAUSE : FLAP_GAME;
+			draw_statusbar();
+			break;
+		case 0x71:
+			STATE->mode = FLAP_LOSE;
+			break;
 	}
 }
 
